@@ -55,11 +55,9 @@ function windowLoad(){
 }
 window.addEventListener('load', windowLoad)
 
-
 function getListItem() {
    const newDiv = document.createElement("div");
    const newInput = document.createElement("input");
-   
    const delDiv = document.createElement("button");
    newInput.classList.add('stroka');
    delDiv.classList.add("knopkaDel");
@@ -67,13 +65,58 @@ function getListItem() {
    newDiv.append(delDiv);
    newInput.type="text";
    newDiv.classList.add("input");
+   newDiv.draggable = true;
+   newDiv.addEventListener('dragstart', eventHandler)
+   newDiv.addEventListener('dragend', eventHandler)
+   newDiv.addEventListener('dragenter', eventHandler)
+   
    
     delDiv.addEventListener("click",(event)=>{
         newDiv.remove()
         const index = arr.indexOf(newDiv);
         arr.splice(index, 1);// ydalenie iz massiva po indeksy
+    
    })
    return newDiv;
+   
 }
 
-    
+let activeCard = null;
+let activNote = null;
+let enterCard = null;
+function eventHandler(event){
+    switch(event.type){
+        case "dragstart":
+            newDiv.classList.add('selected');
+            
+
+        break
+        case "dragend":
+            event.currentTarget.classList.remove('selected');
+            changeCards(event.currentTarget, enterCard);
+
+            break;
+        case "dragenter":
+            if (!event.currentTarget.classList.contains('selected')) {
+                enterCard = event.currentTarget;
+                console.log(enterCard);
+            }
+            break;
+
+    }
+
+}
+  
+function changeCards(card1, card2){
+    let cardsArr = [...document.querySelectorAll(".input")];
+    const cont = document.querySelector(".vidimoe")
+    const index1 = cardsArr.indexOf(card1);
+    const index2 = cardsArr.indexOf(card2);
+    if (index1 > index2) {
+        cont.insertBefore(card1, card2)
+    }else {
+        cont.insertBefore(card2, card1)
+    }
+
+
+}

@@ -176,4 +176,10 @@ p{
 .img.second:hover{
     background: url('../src/img/second2.svg') no-repeat center center / contain;
 }
+.selected{
+    background-color: aqua;
+}
+.input input{
+    background: transparent;
 
+}
