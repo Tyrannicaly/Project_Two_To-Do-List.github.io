@@ -93,11 +93,11 @@ function eventHandler(event){
         break
         case "dragend":
             event.currentTarget.classList.remove('selected');
-            changeCards(event.currentTarget, enterCard);
+            changeCards(event.currentTarget, enterCard);// vyzyvaem  func  dlya tekyshei cartochki i zavodyshei
 
             break;
         case "dragenter":
-            if (!event.currentTarget.classList.contains('selected')) {
+            if (!event.currentTarget.classList.contains('selected')) { // esli tekyshaya kartochka ne sodershit selected (proverka)
                 enterCard = event.currentTarget;
                 console.log(enterCard);
             }

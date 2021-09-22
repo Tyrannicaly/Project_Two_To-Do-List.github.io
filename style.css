@@ -124,7 +124,7 @@ p{
     height: 20px;
     left: 672px;
     top: 359px;
-    background: url('../src/img/cross.svg') no-repeat center center / contain;
+    background: url('./src/img/cross.svg') no-repeat center center / contain;
     border: 1px solid #C4C4C4;
     box-sizing: border-box;
     border-radius: 100%;
@@ -136,7 +136,7 @@ p{
 .knopkaDel:hover{
     width: 20px;
     height: 20px;
-    background: url('../src/img/cross-white.svg') no-repeat center center / contain;
+    background: url('./src/img/cross-white.svg') no-repeat center center / contain;
 }
 
 .plus{
@@ -161,20 +161,20 @@ p{
 }
 
 .img.firstImg{
-    background: url('../src/img/first.svg') no-repeat center center / contain;
+    background: url('./src/img/first.svg') no-repeat center center / contain;
 }
 
 .img.firstImg:hover{
-    background: url('../src/img/first2.svg') no-repeat center center / contain;
+    background: url('./src/img/first2.svg') no-repeat center center / contain;
 }
 
 
 .img.second{
-    background: url('../src/img/second.svg') no-repeat center center / contain;
+    background: url('./src/img/second.svg') no-repeat center center / contain;
 }
 
 .img.second:hover{
-    background: url('../src/img/second2.svg') no-repeat center center / contain;
+    background: url('./src/img/second2.svg') no-repeat center center / contain;
 }
 .selected{
     background-color: aqua;
